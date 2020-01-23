@@ -5,6 +5,17 @@ const lineReader = require('line-reader');
 
 let importsArray = [];
 
+let functionsArr = [];
+const functionRelations = () => {
+  lineReader.eachLine(`./reader.js`, (line) => {
+    // show functions related with readDir();
+    if(line.includes(' = (') && !line.includes("line.includes(' = (')")) {
+      line = line.split(' ')[1];
+      functionsArr.push(line)
+    }
+  });
+};
+
 const handleImport = (lineWithImport, sourceFile) => {
   let importedFileName = lineWithImport.split(' ');
   importedFileName = importedFileName[1];
@@ -42,17 +53,6 @@ const readDir = () => {
     })
   });
 }
-
-let functionsArr = [];
-const functionRelations = () => {
-  lineReader.eachLine(`./reader.js`, (line) => {
-    // show functions related with readDir();
-    if(line.includes(' = (') && !line.includes("line.includes(' = (')")) {
-      line = line.split(' ')[1];
-      functionsArr.push(line)
-    }
-  });
-};
 
 functionRelations();
 
