@@ -1,0 +1,17 @@
+{
+  "name": "io-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Szymon Zalarski",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cuid": "^2.1.8",
+    "express": "^4.17.1",
+    "line-reader": "^0.4.0"
+  }
+}
